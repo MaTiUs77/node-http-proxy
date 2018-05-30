@@ -3,7 +3,7 @@ services:
 
     node:
       restart: always
-      container_name: siep-http-proxy
+      container_name: siep-api-gw
       build: .
       volumes:
          - "./app:/src/app"
