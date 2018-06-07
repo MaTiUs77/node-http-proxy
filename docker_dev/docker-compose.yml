@@ -3,6 +3,7 @@ services:
 
     node:
       restart: always
+      image: siep_gateway:latest
       container_name: siep-api-gw
       build: .
       volumes:
