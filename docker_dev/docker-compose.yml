@@ -9,4 +9,9 @@ services:
          - "./app:/src/app"
       ports:
          - "7777:80"
+      networks:
+        - siep-lan
 
+networks:
+  siep-lan:
+    driver: bridge
