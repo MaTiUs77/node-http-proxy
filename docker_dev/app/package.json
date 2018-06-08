@@ -1,7 +1,7 @@
 {
-  "name": "siep-http-proxy",
+  "name": "node-http-proxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proxy gateway",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

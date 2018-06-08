@@ -3,11 +3,11 @@ services:
 
     node:
       restart: always
-      image: siep_gateway:latest
+      image: node:alpine
       container_name: siep-api-gw
-      build: .
       volumes:
          - "./app:/src/app"
+      command: sh -c "cd /src/app && npm install && npm start"
       ports:
          - "7777:80"
       networks:
