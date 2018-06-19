@@ -1,6 +1,6 @@
 var routes = [
-  { target: 'http://siep-api-web', path: '/api', target_path: '/api' },
-  { target: 'http://siep-auth-web', path: '/auth', target_path: '/' }
+  { target: process.env.SIEP_LARAVEL_API, path: '/api', target_path: '/api' },
+  { target: process.env.SIEP_AUTH_API, path: '/auth', target_path: '/' }
 ];
 
 module.exports = routes;
