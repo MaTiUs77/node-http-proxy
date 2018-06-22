@@ -7,6 +7,7 @@ var config = require('./config');
 var routes = require('./routes');
 var app = express();
 
+/*
 function execPromise(command) {
     return new Promise(function(resolve, reject) {
         cmd.exec(command, (error, stdout, stderr) => {
@@ -19,8 +20,10 @@ function execPromise(command) {
         });
     });
 }
+*/
 
 app.get('/', async function (req, res) {
+  /*
   try {
       let origin = await execPromise('git remote -v');
       origin = origin.replace('origin','').replace('\t','');
@@ -30,8 +33,14 @@ app.get('/', async function (req, res) {
   } catch (e) {
       console.error(e.message);
   }
+  */
 
-    res.json(config.index);
+  if(req.query.env==1)
+  {
+    config.index.env = process.env;
+  }
+
+  res.json(config.index);
 });
 
 routes.forEach(function(gw) {
@@ -45,5 +54,5 @@ routes.forEach(function(gw) {
   }));
 });
 
-console.log("proxy-port listening on port",config.port);
+console.log("proxy listening on port",config.port);
 app.listen(config.port);
