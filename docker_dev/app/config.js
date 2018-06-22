@@ -8,7 +8,8 @@ config.index = {
     'github': {
        'url': null,
        'tag': null
-    }
+    },
+    'env': process.env
 };
 
 module.exports = config;
