@@ -5,3 +5,5 @@
 docker_dev/app/node_modules/
 
 docker_dev/app/package-lock\.json
+
+docker_dev/app/master\.json
