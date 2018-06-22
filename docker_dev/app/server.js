@@ -7,6 +7,8 @@ var config = require('./config');
 var routes = require('./routes');
 var app = express();
 
+var master = require('./master');
+
 /*
 function execPromise(command) {
     return new Promise(function(resolve, reject) {
@@ -38,6 +40,12 @@ app.get('/', async function (req, res) {
   if(req.query.env==1)
   {
     config.index.env = process.env;
+  }
+
+  config.index.github = {
+	commit: master.sha.substring(0,7),
+  	sha: master.sha,
+	message: master.commit.message
   }
 
   res.json(config.index);
