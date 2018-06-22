@@ -55,7 +55,7 @@ routes.forEach(function(gw) {
   let route_path= {};
   route_path[`^${gw.path}`] = gw.target_path;
 
-  app.use(`${gw.path}/**`, proxy({
+  app.use(`${gw.path}**`, proxy({
     changeOrigin: true,
     target: gw.target,
     pathRewrite: route_path
